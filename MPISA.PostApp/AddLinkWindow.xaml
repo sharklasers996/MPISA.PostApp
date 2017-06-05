@@ -1,0 +1,19 @@
+﻿<Window x:Class="MPISA.PostApp.AddLinkWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MPISA.PostApp"
+        mc:Ignorable="d"
+        Title="Pridėti Nuorodą" Height="193.704" Width="550.342" WindowStyle="None" WindowStartupLocation="CenterScreen" Topmost="True" ShowActivated="False" ShowInTaskbar="False" ResizeMode="NoResize" Foreground="White" Background="Black" BorderBrush="White" BorderThickness="1" Loaded="Window_Loaded" MouseDown="Window_MouseDown">
+    <Grid>
+        <Label Content="Pridėti Nuorodą" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White" FontSize="17" FontWeight="SemiBold"/>
+        <Label Content="Tekstas" HorizontalAlignment="Left" Margin="37,57,0,0" VerticalAlignment="Top" Foreground="White" FontSize="13"/>
+        <Label Content="Nuoroda" HorizontalAlignment="Left" Margin="37,95,0,0" VerticalAlignment="Top" Foreground="White" FontSize="13"/>
+        <TextBox x:Name="textBoxText" HorizontalAlignment="Left" Height="23" Margin="114,61,0,0" VerticalAlignment="Top" Width="373" SelectionBrush="Red" BorderBrush="{x:Null}" BorderThickness="0" FontSize="14" FontWeight="Medium" TextOptions.TextFormattingMode="Display" VerticalContentAlignment="Center" TextChanged="textBoxText_TextChanged" KeyDown="textBoxText_KeyDown"/>
+        <TextBox x:Name="textBoxLink" HorizontalAlignment="Left" Height="23" Margin="114,99,0,0" VerticalAlignment="Top" Width="373" SelectionBrush="Red" BorderBrush="{x:Null}" BorderThickness="0" FontSize="14" FontWeight="Medium" TextOptions.TextFormattingMode="Display" VerticalContentAlignment="Center" TextChanged="textBoxLink_TextChanged" KeyDown="textBoxLink_KeyDown"/>
+        <Button x:Name="buttonSave" Content="Išsaugoti" HorizontalAlignment="Left" Margin="212,143,0,0" VerticalAlignment="Top" Width="119" Style="{DynamicResource ButtonStyleMain}" Height="30" FontSize="14" FontWeight="Medium" Click="buttonSave_Click"/>
+        <Button x:Name="buttonCancel" Content="Aj Px" HorizontalAlignment="Left" Margin="336,143,0,0" VerticalAlignment="Top" Width="119" Style="{DynamicResource ButtonStyleMain}" Height="30" FontSize="14" FontWeight="Medium" Click="buttonCancel_Click"/>
+
+    </Grid>
+</Window>

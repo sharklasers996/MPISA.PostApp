@@ -1,0 +1,39 @@
+﻿<Window x:Class="MPISA.PostApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MPISA.PostApp"
+        mc:Ignorable="d"
+        Title="MPISA" Height="559.6" Width="671.4" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" MouseDown="Window_MouseDown" Loaded="Window_Loaded" Icon="galva3.ico">
+    <Grid Background="Black">
+        <Image HorizontalAlignment="Left" Height="74" Margin="118,10,0,0" VerticalAlignment="Top" Width="409" Source="Resources/banner.png" RenderTransformOrigin="0.5,0.5"/>
+        <Button x:Name="buttonClose" Content="{DynamicResource ExitButton}" HorizontalAlignment="Left" Margin="627,10,0,0" VerticalAlignment="Top" Width="34" Height="32" FontWeight="Bold" FontSize="19" BorderBrush="{x:Null}" Background="White" Style="{DynamicResource ButtonStyleMain}" Click="buttonClose_Click"/>
+        <Button x:Name="buttonMinimize" Content="{DynamicResource MinimizeButton}" HorizontalAlignment="Left" Margin="588,10,0,0" VerticalAlignment="Top" Width="34" Height="32" FontWeight="ExtraBlack" FontSize="19" BorderBrush="{x:Null}" Background="White" Padding="1,15,1,1" Style="{DynamicResource ButtonStyleMain}" Click="buttonMinimize_Click"/>
+        <Label Content="Pavadinimas" HorizontalAlignment="Left" Margin="21,143,0,0" VerticalAlignment="Top" Foreground="White" FontSize="14" FontWeight="Medium" BorderBrush="Red" BorderThickness="0,0,0,2"/>
+        <Label Content="Aprašymas" HorizontalAlignment="Left" Margin="21,206,0,0" VerticalAlignment="Top" Foreground="White" FontSize="14" FontWeight="Medium" BorderBrush="Red" BorderThickness="0,0,0,2"/>
+        <TextBox x:Name="textBoxTitle" HorizontalAlignment="Left" Height="23" Margin="21,178,0,0" VerticalAlignment="Top" Width="628" SelectionBrush="Red" BorderBrush="{x:Null}" BorderThickness="0" FontSize="14" FontWeight="Medium" TextOptions.TextFormattingMode="Display" VerticalContentAlignment="Center" TextChanged="textBoxTitle_TextChanged" CaretBrush="Red"/>
+        <RichTextBox x:Name="richTextBoxDescription" HorizontalAlignment="Left" Height="100" Margin="21,241,0,0" VerticalAlignment="Top" Width="628" SelectionBrush="Red" FontSize="13" BorderBrush="{x:Null}" BorderThickness="0" CaretBrush="Red" TextChanged="richTextBoxDescription_TextChanged" VerticalScrollBarVisibility="Auto" TextOptions.TextFormattingMode="Display" Block.LineHeight="15">
+            <FlowDocument/>
+            <RichTextBox.Resources>
+                <Style TargetType="{x:Type Paragraph}">
+                    <Setter Property="Margin" Value="0"/>
+                </Style>
+            </RichTextBox.Resources>
+        </RichTextBox>
+        <Label x:Name="labelLinks" Content="Nuorodos" HorizontalAlignment="Left" Margin="21,346,0,0" VerticalAlignment="Top" Foreground="White" FontSize="14" FontWeight="Medium" BorderBrush="Red" BorderThickness="0,0,0,2"/>
+        <Label x:Name="labelVideos" Content="Video" HorizontalAlignment="Left" Margin="364,347,0,0" VerticalAlignment="Top" Foreground="White" FontSize="14" FontWeight="Medium" BorderBrush="Red" BorderThickness="0,0,0,2"/>
+        <ListBox x:Name="listboxLinks" HorizontalAlignment="Left" Height="100" Margin="21,382,0,0" VerticalAlignment="Top" Width="332" BorderBrush="{x:Null}" BorderThickness="0" ItemContainerStyle="{DynamicResource ListBoxItemStyleMain}" KeyDown="listboxLinks_KeyDown"/>
+        <ListBox x:Name="listboxVideos" HorizontalAlignment="Left" Height="100" Margin="364,382,0,0" VerticalAlignment="Top" Width="285" BorderBrush="{x:Null}" BorderThickness="0" ItemContainerStyle="{DynamicResource ListBoxItemStyleMain}" KeyDown="listboxVideos_KeyDown"/>
+        <Button x:Name="buttonSave" Content="Išsaugoti" HorizontalAlignment="Left" Margin="530,504,0,0" VerticalAlignment="Top" Width="119" Style="{DynamicResource ButtonStyleMain}" Height="30" FontSize="14" FontWeight="Medium" Click="buttonSave_Click"/>
+        <Label x:Name="labelPost" Content="Įrašas" HorizontalAlignment="Left" Margin="144,89,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" FontWeight="Bold" BorderBrush="Red" BorderThickness="0,0,0,2" MouseDown="labelPost_MouseDown" Width="175" HorizontalContentAlignment="Center"/>
+        <Label x:Name="labelPhotos" Content="Nuotraukos" HorizontalAlignment="Left" Margin="324,89,0,0" VerticalAlignment="Top" Foreground="White" FontSize="16" FontWeight="Bold" BorderBrush="Red" BorderThickness="0" MouseDown="labelPhotos_MouseDown" Width="175" HorizontalContentAlignment="Center"/>
+        <Button x:Name="buttonAddLink" Content="+" HorizontalAlignment="Left" Margin="100,350,0,0" VerticalAlignment="Top" Width="32" Style="{DynamicResource ButtonStylePlain}" Foreground="White" FontWeight="SemiBold" FontSize="15" RenderTransformOrigin="0.5,0.5" Height="27" Click="buttonAddLink_Click"/>
+        <Button x:Name="buttonAddVideo" Content="+" HorizontalAlignment="Left" Margin="415,349,0,0" VerticalAlignment="Top" Width="32" Style="{DynamicResource ButtonStylePlain}" Foreground="White" FontWeight="SemiBold" FontSize="15" RenderTransformOrigin="0.5,0.5" Height="27" Click="buttonAddVideo_Click"/>
+        <Button x:Name="buttonPoster" Content="Plakatas" HorizontalAlignment="Left" Margin="21,504,0,0" VerticalAlignment="Top" Width="119" Style="{DynamicResource ButtonStyleMain}" Height="30" FontSize="14" FontWeight="Medium" Click="buttonPoster_Click"/>
+        <Label x:Name="labelPhotosAdd" Content="Nuotraukos" HorizontalAlignment="Left" Margin="21,346,0,0" VerticalAlignment="Top" Foreground="White" FontSize="14" FontWeight="Medium" BorderBrush="Red" BorderThickness="0,0,0,2" Opacity="0" Visibility="Hidden"/>
+        <ListBox x:Name="listboxPhotos" HorizontalAlignment="Left" Height="100" Margin="21,382,0,0" VerticalAlignment="Top" Width="628" BorderBrush="{x:Null}" BorderThickness="0" ItemContainerStyle="{DynamicResource ListBoxItemStyleMain}" KeyDown="listboxPhotos_KeyDown" Opacity="0" Visibility="Hidden"/>
+        <Button x:Name="buttonAddPhoto" Content="+" HorizontalAlignment="Left" Margin="108,348,0,0" VerticalAlignment="Top" Width="32" Style="{DynamicResource ButtonStylePlain}" Foreground="White" FontWeight="SemiBold" FontSize="15" RenderTransformOrigin="0.5,0.5" Height="27" Click="buttonAddPhoto_Click" Opacity="0" Visibility="Hidden"/>
+        <Label x:Name="labelPhotosCount" Content="0" HorizontalAlignment="Left" Margin="611,348,0,0" VerticalAlignment="Top" Foreground="White" FontSize="14" FontWeight="Medium" BorderBrush="Red" BorderThickness="0,0,0,2" FlowDirection="RightToLeft" Width="38" HorizontalContentAlignment="Center" Opacity="0" Visibility="Hidden"/>
+    </Grid>
+</Window>
