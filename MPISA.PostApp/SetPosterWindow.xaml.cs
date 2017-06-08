@@ -39,7 +39,10 @@ namespace MPISA.PostApp
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            DragMove();
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
         }
 
         private void buttonBrowse_Click(object sender, RoutedEventArgs e)
